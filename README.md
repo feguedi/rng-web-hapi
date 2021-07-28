@@ -22,6 +22,52 @@ El backend funciona a manera de API Rest. Los siguientes son los parámetros nec
 | m | Módulo | _**número**_ |
 | metodo | Método congruencial | _**mixto / multiplicativo**_ |
 
+
+### Ejemplos
+
+#### Fetch
+
+```javascript
+const params = new URLSearchParams()
+params.set('x', 4)
+params.set('a', 5)
+params.set('c', 8)
+params.set('m', 7)
+params.set('metodo', 'multiplicativo')
+
+fetch({
+  method: 'get',
+  url: `https://rng.gudin.io/data?${params.toString()}`,
+})
+  .then(response => response.json())
+  .then(console.log)
+  .catch(console.error)
+```
+
+#### Axios
+
+```javascript
+axios({
+  method: 'get',
+  url: 'https://rng.gudin.io/data'
+  params: {
+    'x': 4,
+    'a': 5,
+    'c': 8,
+    'm': 7,
+    'metodo': 'multiplicativo',
+  }
+})
+  .then(({ data }) => console.log(data))
+  .then((err) => console.error(err))
+```
+
+#### cUrl
+
+```sh
+curl -X GET "https://rng.gudin.io/data?x=4&a=5&c=8&m=7&metodo=multiplicativo"
+```
+
 ## Pendientes
 
 ### Front end
@@ -33,8 +79,8 @@ El backend funciona a manera de API Rest. Los siguientes son los parámetros nec
 
 ### Back end
 
-* Agregar salida de datos con un archivo de Excel, JSON o CSV
+* ~~Agregar salida de datos con un archivo de Excel, JSON o CSV~~
 
 ## Notas
 
-* Aquí algunos ejemplos de la librería SheetJS con Node [este es el tutorial](https://github.com/SheetJS/js-xlsx/tree/master/demos/server)
+* [Aquí](https://github.com/SheetJS/js-xlsx/tree/master/demos/server) algunos ejemplos de la librería SheetJS con Node

@@ -23,6 +23,7 @@
     "dotenv": "^10.0.0",
     "joi": "^17.4.1",
     "qs": "^6.10.1",
+    "underscore": "^1.13.1",
     "xlsx": "^0.17.0"
   },
   "devDependencies": {

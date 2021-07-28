@@ -1,11 +1,11 @@
 const Joi = require('joi')
 
 const getDataSchema = Joi.object({
-    x: Joi.string().alphanum().required(),
-    a: Joi.string().alphanum().required(),
-    c: Joi.string().alphanum(),
-    m: Joi.string().alphanum().required(),
-    metodo: Joi.string().pattern(/^mixto|multiplicativo$/i).required(),
+    x: Joi.number().required(),
+    a: Joi.number().required(),
+    c: Joi.number(),
+    m: Joi.number().required(),
+    metodo: Joi.string().pattern(/^mixto|multiplicativo$/i).example(['mixto', 'multiplicativo']).required(),
 }).label('solicitarDatos')
 
 module.exports = {

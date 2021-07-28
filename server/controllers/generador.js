@@ -1,7 +1,6 @@
 'use strict'
 const mixto = require('./mixto')
 const multiplicativo = require('./multiplicativo')
-const vldt = require('./validator')
 
 const arrays = (...args) => {
     let array = []

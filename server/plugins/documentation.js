@@ -48,8 +48,11 @@ exports.swaggerOptions = {
         grouping: 'tags',
         sortEndpoints: 'alpha',
         tags: [{
-            name: 'user',
+            name: 'usuario',
             description: 'Rutas del usuario',
+        }, {
+            name: 'archivos',
+            description: 'Rutas de archivos',
         }],
         documentationPath: '/docs/api',
         jsonPath: '/docs/swagger.json',

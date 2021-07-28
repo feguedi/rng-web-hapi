@@ -1,4 +1,5 @@
 const Boom = require('@hapi/boom')
+const errorHandler = require('./errors')
 
 function failAction (request, h, error) {
     if (process.env.NODE_ENV !== 'production') {
